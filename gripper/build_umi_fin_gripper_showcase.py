@@ -90,7 +90,7 @@ LINE_BY_LINE = False      # True=逐条可见绘制（本机可能导致拉伸�
 PROGRESS_EVERY = 50       # 每画这么多条线段播报一次进度
 
 TPL = r"C:\ProgramData\SOLIDWORKS\SOLIDWORKS 2024\templates\gb_part.prtdot"
-OUT_DIR = os.path.join(os.path.expanduser("~"), "Documents", "Codex", "2026-08-15", "he-2", "outputs")
+OUT_DIR = os.path.dirname(os.path.abspath(__file__))
 DESKTOP_DIR = os.path.join(os.path.expanduser("~"), "Desktop")
 PART_NAME_CN = "\u9c7c\u9ccd\u8f6f\u722a.SLDPRT"      # 鱼鳍软爪.SLDPRT
 PART_NAME_ASCII = "UMI_FinGripper.SLDPRT"

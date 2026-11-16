@@ -1,7 +1,7 @@
-# SolidWorks 2024 自动化建模 Prompt（避坑版）
+# SolidWorks 2024 自动化建模 Prompt（历史归档）
 
 > 本文件整理自 2026-08-15 实机排障记录（SolidWorks 2024 SP0.1 中文版 + 本机专属 typelib）。
-> 下次做 SolidWorks 自动化任务时，把本文件整体作为前置上下文交给执行者。
+> 本文保留当时的环境、API 判断和旧路径，供追溯使用，不再作为当前任务的整套前置指令。当前操作优先使用已安装的 `solidworks-automation`；本机兼容说明在`$CODEX_HOME/local-reference/solidworks-2024/compatibility-notes.md`，不随仓库分发。以下历史记录不代表当前接口或环境仍有相同限制。
 
 ## 一、角色与任务
 
