@@ -26,6 +26,11 @@
 python -X utf8 tools/check_repository.py
 ```
 
+项目改动默认通过工作分支和PR审核合并。[Repository checks](.github/workflows/repository-check.yml)
+在PR、推送到`main`和手动触发时自动执行仓库检查；本地与CI使用同一检查脚本。
+具体授权节奏与检查范围见[仓库协作与检查](docs/guides/仓库结构与产物管理.md#仓库协作与检查)。
+参与维护和提交PR见[CONTRIBUTING.md](CONTRIBUTING.md)，PR填写问题、改动和实际验证结果。
+
 执行建模脚本前，按案例核对参数、软件会话与全新的输出目录。旧案例存在阶段续作和现场修复入口，
 不能把整个目录的Python文件依次执行。`outputs/` 中的现场脚本是历史证据，维护入口以 `practice/` 为准。
 
