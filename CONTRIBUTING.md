@@ -9,6 +9,7 @@
 提交PR前运行：
 
 ```powershell
+python -X utf8 -m unittest discover -s tests -v
 python -X utf8 tools/check_repository.py
 git diff --check
 ```
@@ -18,6 +19,8 @@ git diff --check
 工作流的通过状态仅代表仓库静态检查通过，模型验收仍遵守项目要求。
 一个PR聚焦一个目标；影响既有调用或默认行为时说明兼容性和撤回方式，合并前核对最新基线和当前提交的实际CI结果。
 用户与AI协作自查如实记录，不表述为独立第三方审核。
+网页合并同样会生成提交：合并前核对署名与邮箱符合GitHub账号和noreply约定。
+网页所用身份不符合时先调整相应账号设置，或改用本机已核验的签名合并提交；不要把本地Git身份配置当作网页合并身份的保证。
 
 `.editorconfig`约定UTF-8、空格缩进及文件末尾换行；`.gitattributes`将维护文本统一为LF，
 Markdown保留合法的行尾双空格换行。本次不批量格式化既有脚本。
