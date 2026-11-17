@@ -23,8 +23,12 @@
 从仓库根目录运行只读检查：
 
 ```powershell
+python -X utf8 -m unittest discover -s tests -v
 python -X utf8 tools/check_repository.py
 ```
+
+首次接手看[本机环境与检查](docs/guides/本机环境与接手检查.md)，具体案例按[运行入口](practice/运行入口.md)核对阶段。
+GitHub保存维护代码与记录，模型和运行证据的独立备份、恢复结果另留本机。
 
 项目改动默认通过工作分支和PR审核合并。[Repository checks](.github/workflows/repository-check.yml)
 在PR、推送到`main`和手动触发时自动执行仓库检查；本地与CI使用同一检查脚本。
