@@ -8,8 +8,8 @@ import time
 import win32com.client
 
 sys.stdout.reconfigure(encoding="utf-8")
-sys.path.insert(0,str(Path(__file__).resolve().parents[2]/"year08/connector"))
-from build_connector import (member as g,mm,sketch,sketch_line,new_document,
+sys.path.insert(0,str(Path(__file__).resolve().parents[2]))
+from shared.cad import (member as g,mm,sketch,sketch_line,new_document,
     save_document,dimension_existing_relations,chamfer_edges,circle_cut)
 from sw_connect import create_empty_dispatch_variant
 from sw_part import revolve_boss,_get_plane_name_candidates,_select_first_candidate
@@ -118,7 +118,7 @@ def pattern(name,count):
     assert p is not None;p.Name=name+"阵列"
 pattern("四组沉头孔",4)
 # 六个D6分布圆D110，60度等分，母孔位于正Z轴；四个D11为D170主轴位置。
-from build_connector import offset_plane
+from shared.cad import offset_plane
 plane=offset_plane(m,"Top Plane",46,"右端孔位面")
 circle_cut(m,s,plane,[(0,46,55)],3,10,-1,"六孔母孔")
 pattern("六孔母孔",6)

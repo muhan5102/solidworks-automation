@@ -8,8 +8,8 @@ import sys
 import time
 
 sys.stdout.reconfigure(encoding='utf-8')
-sys.path.insert(0, str(Path(__file__).resolve().parents[2] / 'year08/connector'))
-from build_connector import (member, mm, sketch, sketch_line, new_document,
+sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
+from shared.cad import (member, mm, sketch, sketch_line, new_document,
     save_document, revolve_boss, dimension_existing_relations, offset_plane, circle_cut)
 from sw_connect import create_empty_dispatch_variant, open_document
 from sw_sketch_quality import inspect_model_sketches

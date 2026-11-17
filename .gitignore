@@ -1,11 +1,6 @@
-# Python 字节码缓存（编译产物，不进版本库）
+# Python字节码缓存不进入版本库
 __pycache__/
 *.pyc
 
-# 原生练习产物、原图渲染、运行日志及本机审查/备份仅留本地
+# 模型、原图、原始日志、交付副本和本机备份仅留本地
 /outputs/
-
-# 鱼鳍范例每次运行的日志和状态
-/gripper/build_log.txt
-/gripper/run_console.log
-/gripper/run_status.txt

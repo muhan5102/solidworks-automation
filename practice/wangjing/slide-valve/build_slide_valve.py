@@ -6,8 +6,8 @@ from pathlib import Path
 import sys
 import time
 sys.stdout.reconfigure(encoding="utf-8")
-sys.path.insert(0, str(Path(__file__).resolve().parents[2]/"year08"/"connector"))
-from build_connector import member, mm, sketch, sketch_line, revolve_boss, new_document, save_document, dimension_existing_relations, round_edges
+sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
+from shared.cad import member, mm, sketch, sketch_line, revolve_boss, new_document, save_document, dimension_existing_relations, round_edges
 from sw_part import extrude_cut
 from sw_connect import create_empty_dispatch_variant, open_document
 from sw_sketch_quality import inspect_model_sketches

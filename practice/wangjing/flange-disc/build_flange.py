@@ -5,8 +5,8 @@ import math
 from pathlib import Path
 import sys
 sys.stdout.reconfigure(encoding="utf-8")
-sys.path.insert(0,str(Path(__file__).resolve().parents[2]/"year08/connector"))
-from build_connector import (member as g, mm, sketch, sketch_line, new_document,
+sys.path.insert(0,str(Path(__file__).resolve().parents[2]))
+from shared.cad import (member as g, mm, sketch, sketch_line, new_document,
     dimension_existing_relations, save_document, offset_plane, circle_cut)
 from sw_part import _get_plane_name_candidates, _select_first_candidate
 from sw_connect import create_empty_dispatch_variant

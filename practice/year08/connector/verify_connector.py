@@ -7,7 +7,8 @@ import sys
 import time
 import win32com.client
 
-from build_connector import member, SKILL
+sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
+from shared.cad import member, SKILL
 from sw_connect import open_document, save_document
 from sw_assembly import iter_feature_tree
 from sw_sketch_quality import inspect_model_sketches

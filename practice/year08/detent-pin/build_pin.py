@@ -3,8 +3,8 @@ import sys,json,math,time
 from pathlib import Path
 from datetime import datetime
 sys.stdout.reconfigure(encoding="utf-8")
-sys.path.insert(0,str(Path(__file__).resolve().parents[1]/"connector"))
-from build_connector import member,mm,sketch,sketch_line,revolve_boss,dimension_existing_relations,new_document,save_document
+sys.path.insert(0,str(Path(__file__).resolve().parents[2]))
+from shared.cad import member,mm,sketch,sketch_line,revolve_boss,dimension_existing_relations,new_document,save_document
 from sw_connect import open_document,create_empty_dispatch_variant
 from sw_review import save_preview
 from sw_sketch_quality import inspect_model_sketches
@@ -51,7 +51,7 @@ for body in member(model,"GetBodies2",0,False):
   if member(surf,"IsCylinder"):faces.append({"cylinder":list(member(surf,"CylinderParams"))})
 quality=inspect_model_sketches(model)
 checks={"one_solid":len(member(model,"GetBodies2",0,False))==1,"fully_defined":quality["status"]=="pass","SR2":any("sphere" in f and abs(f["sphere"][3]-.002)<1e-8 for f in faces),"D4":any("cylinder" in f and abs(f["cylinder"][6]-.002)<1e-8 for f in faces)}
-from build_connector import round_edges
+from shared.cad import round_edges
 edges=[(position,radius) for _,position,radius in round_edges(model)]
 def has_edge(y,radius):
  return any(math.dist(position,[0,y,0])<1e-5 and abs(r-radius)<1e-5 for position,r in edges)

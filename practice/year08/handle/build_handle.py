@@ -7,8 +7,8 @@ import sys
 import time
 
 sys.stdout.reconfigure(encoding="utf-8")
-sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "connector"))
-from build_connector import (
+sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
+from shared.cad import (
     member, mm, new_document, save_document, sketch, sketch_line,
     revolve_boss, dimension_existing_relations, round_edges, chamfer_edges,
 )

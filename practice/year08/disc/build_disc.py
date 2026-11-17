@@ -4,8 +4,8 @@ from pathlib import Path
 from datetime import datetime
 
 sys.stdout.reconfigure(encoding="utf-8")
-sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "connector"))
-from build_connector import (member, mm, sketch, sketch_circle, sketch_line,
+sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
+from shared.cad import (member, mm, sketch, sketch_circle, sketch_line,
                              new_document, save_document, circle_cut,
                              round_edges)
 from sw_part import extrude_boss, extrude_cut, fillet

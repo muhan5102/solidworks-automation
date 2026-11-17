@@ -2,8 +2,8 @@
 from pathlib import Path
 import sys
 sys.stdout.reconfigure(encoding="utf-8")
-sys.path.insert(0,str(Path(__file__).resolve().parents[2]/"year08/connector"))
-from build_connector import (member as g, mm, circle_cut, sketch, sketch_line,
+sys.path.insert(0,str(Path(__file__).resolve().parents[2]))
+from shared.cad import (member as g, mm, circle_cut, sketch, sketch_line,
                              dimension_existing_relations, save_document, round_edges, offset_plane)
 from sw_part import extrude_cut, _get_plane_name_candidates, _select_first_candidate
 import win32com.client

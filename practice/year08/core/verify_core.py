@@ -4,8 +4,8 @@ import math
 from pathlib import Path
 import sys
 sys.stdout.reconfigure(encoding="utf-8")
-sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "connector"))
-from build_connector import member, save_document
+sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
+from shared.cad import member, save_document
 from sw_connect import open_document
 from sw_sketch_quality import inspect_model_sketches
 from sw_assembly import iter_feature_tree

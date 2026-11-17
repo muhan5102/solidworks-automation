@@ -4,8 +4,8 @@ from pathlib import Path
 import sys
 import time
 
-sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "connector"))
-from build_connector import member, mm, save_document
+sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
+from shared.cad import member, mm, save_document
 from sw_part import fillet, chamfer
 from sw_edge_select import _edge_curve
 

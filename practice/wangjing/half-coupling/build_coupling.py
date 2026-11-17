@@ -8,8 +8,8 @@ import time
 import win32com.client
 
 sys.stdout.reconfigure(encoding="utf-8")
-sys.path.insert(0,str(Path(__file__).resolve().parents[2]/"year08/connector"))
-from build_connector import (member as g,mm,sketch,sketch_line,sketch_circle,
+sys.path.insert(0,str(Path(__file__).resolve().parents[2]))
+from shared.cad import (member as g,mm,sketch,sketch_line,sketch_circle,
     new_document,save_document,dimension_existing_relations,offset_plane,chamfer_edges)
 from sw_part import revolve_boss,extrude_cut,_ensure_sketch_selected,_get_plane_name_candidates,_select_first_candidate
 from sw_connect import create_empty_dispatch_variant
