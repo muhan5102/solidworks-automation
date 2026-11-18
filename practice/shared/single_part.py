@@ -92,7 +92,7 @@ def dimensions(model, feature_name):
     return result
 
 
-def surfaces(model):
+def surfaces(model, *, hole_evidence=False):
     result = []
     for body in g(model, "GetBodies2", 0, False):
         for face in g(body, "GetFaces"):
@@ -101,6 +101,9 @@ def surfaces(model):
             for kind in ["Cylinder", "Cone", "Torus", "Sphere", "Plane"]:
                 if g(surface, "Is"+kind):
                     row[kind] = list(g(surface, kind+"Params"))
+                    if hole_evidence and kind in ("Cylinder", "Cone"):
+                        row["internal"] = bool(g(face, "FaceInSurfaceSense"))
+                        row["area_mm2"] = g(face, "GetArea") * 1_000_000
                     break
             result.append(row)
     return result
